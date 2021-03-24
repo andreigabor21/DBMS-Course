@@ -17,11 +17,14 @@ namespace Laboratory1
                                     "Initial Catalog = 'BookLibrary';" +
                                     "Integrated Security = true;";
         private SqlConnection sqlConnection = new SqlConnection(connectionString);
-        private DataSet clientsDataSet;
-        private DataSet loansDataSet;
-        private SqlDataAdapter clientsDataAdapter;
-        private SqlDataAdapter loansDataAdapter;
+        private DataSet booksDataSet;
+        private DataSet votesDataSet;
+        private SqlDataAdapter booksDataAdapter;
+        private SqlDataAdapter votesDataAdapter;
         private SqlCommandBuilder commandBuilder;
+        //BindingSource bsShips, bsPirates;
+        //only 1 data set
+        //DataRelation //GetChildRows
 
         public Books()
         {
@@ -31,30 +34,27 @@ namespace Laboratory1
         private void Form1_Load(object sender, EventArgs e)
         {
             sqlConnection.Open();
-            string sqlString = "SELECT c.CId, c.FirstName, c.SecondName, c.SSN, c.CAddress, c.PhoneNumber, c.Email, c.RegistrationDate, cg.CGName " +
-                               "FROM Client c " +
-                               "INNER JOIN ClientsGroups cg ON cg.CGId = c.CGId;";
-            clientsDataAdapter = new SqlDataAdapter(sqlString, connectionString);
-            clientsDataSet = new DataSet();
-            clientsDataAdapter.Fill(clientsDataSet, "Clients");
-            clientsGridView.DataSource = clientsDataSet.Tables["Clients"];
+            string sqlString = "SELECT * FROM Books";
+            booksDataAdapter = new SqlDataAdapter(sqlString, connectionString);
+            booksDataSet = new DataSet();
+            booksDataAdapter.Fill(booksDataSet, "Books");
+            BooksGridView.DataSource = booksDataSet.Tables["Books"];
         }
 
         private void clientsGridView_SelectionChanged(object sender, EventArgs e)
         {
-            object obj = clientsGridView.CurrentRow.Cells["CId"].Value;
+            object obj = BooksGridView.CurrentRow.Cells["ISBN"].Value;
             if (obj != DBNull.Value)
             {
-                int clientId = (int)obj;
-                SqlCommand command = new SqlCommand("SELECT * FROM Loans WHERE CId=@CId", sqlConnection);
-                command.Parameters.AddWithValue("@CId", clientId);
-                loansDataAdapter = new SqlDataAdapter(command);
-                loansDataSet = new DataSet();
-                loansDataAdapter.Fill(loansDataSet, "Loans");
-                loansDataGridView.DataSource = loansDataSet.Tables["Loans"];
+                long isbn = (long)obj;
+                SqlCommand command = new SqlCommand("SELECT * FROM Votes WHERE ISBN=@ISBN", sqlConnection);
+                command.Parameters.AddWithValue("@ISBN", isbn);
+                votesDataAdapter = new SqlDataAdapter(command);
+                votesDataSet = new DataSet();
+                votesDataAdapter.Fill(votesDataSet, "Votes");
+                votesDataGridView.DataSource = votesDataSet.Tables["Votes"];
                 sqlConnection.Close();
             }
-       
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -62,8 +62,8 @@ namespace Laboratory1
             try
             {
                 sqlConnection.Open();
-                commandBuilder = new SqlCommandBuilder(loansDataAdapter);
-                loansDataAdapter.Update(loansDataSet, "Loans");
+                commandBuilder = new SqlCommandBuilder(votesDataAdapter);
+                votesDataAdapter.Update(votesDataSet, "Votes");
                 MessageBox.Show("Changes are saved");
                 sqlConnection.Close();
             }

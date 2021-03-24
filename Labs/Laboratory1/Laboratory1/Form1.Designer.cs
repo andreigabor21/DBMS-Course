@@ -29,53 +29,53 @@ namespace Laboratory1
         /// </summary>
         private void InitializeComponent()
         {
-            this.clientsGridView = new System.Windows.Forms.DataGridView();
-            this.loansDataGridView = new System.Windows.Forms.DataGridView();
+            this.BooksGridView = new System.Windows.Forms.DataGridView();
+            this.votesDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loansDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BooksGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.votesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // clientsGridView
+            // BooksGridView
             // 
-            this.clientsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.clientsGridView.Location = new System.Drawing.Point(77, 42);
-            this.clientsGridView.Name = "clientsGridView";
-            this.clientsGridView.RowHeadersWidth = 51;
-            this.clientsGridView.RowTemplate.Height = 24;
-            this.clientsGridView.Size = new System.Drawing.Size(1259, 528);
-            this.clientsGridView.TabIndex = 0;
-            this.clientsGridView.SelectionChanged += new System.EventHandler(this.clientsGridView_SelectionChanged);
+            this.BooksGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BooksGridView.Location = new System.Drawing.Point(77, 42);
+            this.BooksGridView.Name = "BooksGridView";
+            this.BooksGridView.RowHeadersWidth = 51;
+            this.BooksGridView.RowTemplate.Height = 24;
+            this.BooksGridView.Size = new System.Drawing.Size(1259, 528);
+            this.BooksGridView.TabIndex = 0;
+            this.BooksGridView.SelectionChanged += new System.EventHandler(this.clientsGridView_SelectionChanged);
             // 
-            // loansDataGridView
+            // votesDataGridView
             // 
-            this.loansDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loansDataGridView.Location = new System.Drawing.Point(77, 594);
-            this.loansDataGridView.Name = "loansDataGridView";
-            this.loansDataGridView.RowHeadersWidth = 51;
-            this.loansDataGridView.RowTemplate.Height = 24;
-            this.loansDataGridView.Size = new System.Drawing.Size(1259, 277);
-            this.loansDataGridView.TabIndex = 1;
+            this.votesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.votesDataGridView.Location = new System.Drawing.Point(77, 594);
+            this.votesDataGridView.Name = "votesDataGridView";
+            this.votesDataGridView.RowHeadersWidth = 51;
+            this.votesDataGridView.RowTemplate.Height = 24;
+            this.votesDataGridView.Size = new System.Drawing.Size(1259, 277);
+            this.votesDataGridView.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(74, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.Size = new System.Drawing.Size(64, 21);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Clients:";
+            this.label1.Text = "Books:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(74, 573);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(60, 21);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Loans:";
+            this.label2.Text = "Votes:";
             // 
             // saveButton
             // 
@@ -95,13 +95,13 @@ namespace Laboratory1
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.loansDataGridView);
-            this.Controls.Add(this.clientsGridView);
+            this.Controls.Add(this.votesDataGridView);
+            this.Controls.Add(this.BooksGridView);
             this.Name = "Books";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.clientsGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loansDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BooksGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.votesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,8 +109,8 @@ namespace Laboratory1
 
         #endregion
 
-        private System.Windows.Forms.DataGridView clientsGridView;
-        private System.Windows.Forms.DataGridView loansDataGridView;
+        private System.Windows.Forms.DataGridView BooksGridView;
+        private System.Windows.Forms.DataGridView votesDataGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button saveButton;

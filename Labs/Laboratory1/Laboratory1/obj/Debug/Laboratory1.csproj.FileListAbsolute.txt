@@ -7,4 +7,4 @@ C:\Users\Andrei Gabor\Desktop\UNI\2nd YEAR\2nd sem\DBMS\Labs\Laboratory1\Laborat
 C:\Users\Andrei Gabor\Desktop\UNI\2nd YEAR\2nd sem\DBMS\Labs\Laboratory1\Laboratory1\obj\Debug\Laboratory1.csproj.CoreCompileInputs.cache
 C:\Users\Andrei Gabor\Desktop\UNI\2nd YEAR\2nd sem\DBMS\Labs\Laboratory1\Laboratory1\obj\Debug\Laboratory1.exe
 C:\Users\Andrei Gabor\Desktop\UNI\2nd YEAR\2nd sem\DBMS\Labs\Laboratory1\Laboratory1\obj\Debug\Laboratory1.pdb
-C:\Users\Andrei Gabor\Desktop\UNI\2nd YEAR\2nd sem\DBMS\Labs\Laboratory1\Laboratory1\obj\Debug\Laboratory1.Form1.resources
+C:\Users\Andrei Gabor\Desktop\UNI\2nd YEAR\2nd sem\DBMS\Labs\Laboratory1\Laboratory1\obj\Debug\Laboratory1.Books.resources
