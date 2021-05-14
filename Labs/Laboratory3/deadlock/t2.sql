@@ -1,3 +1,5 @@
+USE BookLibrary;
+
 --deadlock
 --T2: update on table Votes + delay + update on table PublishingHouse
 
@@ -27,3 +29,10 @@ BEGIN TRAN
 	SET Email = 'T2@tld.com'
 	WHERE PName = 'Curtea Veche'
 COMMIT TRAN
+
+/*To reduce deadlocks:
+- Transactions - short
+- Obtain/verify data before transaction
+- Access resourses in the same order
+- Use a lower isolation level
+*/

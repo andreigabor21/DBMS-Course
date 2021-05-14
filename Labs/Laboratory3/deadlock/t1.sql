@@ -1,6 +1,13 @@
---deadlock
---T1: update on table PublishingHouse + delay + update on table Votes
+USE BookLibrary;
 
+--deadlock
+--SQL Server uses deadlock detection
+--the tran that is least expensive to roll back is terminated
+
+--the two updates will cause the deadlock with the ones in T2 because essentially
+--each one will be stuck waiting for the other to free the resource
+
+--T1: update on table PublishingHouse + delay + update on table Votes
 BEGIN TRAN
 	UPDATE PublishingHouse
 	SET Email = 'T1@tld.com'

@@ -1,4 +1,7 @@
+USE BookLibrary;
+
 --T1: update + delay + rollback
+--try to update and rollback after 10 seconds
 BEGIN TRAN
 	UPDATE Client 
 	SET Email = 'new_email@tld.ro'
